@@ -116,4 +116,15 @@ function updateInventoryDisplay(hero) {
     });
 }
 
+function showHint(message, duration = 3000) {
+    const hintBox = document.getElementById('hintBox');
+    hintBox.textContent = message;
+    hintBox.classList.add('show');
+
+    setTimeout(() => {
+        hintBox.classList.remove('show');
+    }, duration);
+}
+
+showHint('Press SPACE to take a step', 5000);
 animateHero();
