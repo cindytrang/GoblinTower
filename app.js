@@ -233,19 +233,13 @@ function endGame() {
     document.getElementById("finalGoblins").textContent = hero.goblinEncounters;
     document.getElementById("finalGold").textContent = hero.gold;
 }
-<<<<<<< HEAD
  
 // Level up
-=======
-
-// Level up 
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 function advanceLevel(hero) {
     hero.level++;
     displayHeroInfo(hero);
     updateGameBoard(`${hero.name} has advanced to level ${hero.level}!`);}
 
-<<<<<<< HEAD
 function showUpdateContainer() {
     document.querySelector('.update-container').style.display = 'block';
 }
@@ -262,13 +256,6 @@ function updateGameBoard(message) {
     gameBoardInfo.innerHTML = `<p>${message}</p>` + gameBoardInfo.innerHTML;
 }
  
-=======
-function updateGameBoard(message) {
-    const gameBoardInfo = document.getElementById('gameBoardInfo');
-    gameBoardInfo.innerHTML += `<p>${message}</p>`;
-}
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 // to display info on the page after the object initalization
 function displayHeroInfo(hero) {
     const nameElement = document.querySelector('.name');
@@ -279,11 +266,7 @@ function displayHeroInfo(hero) {
     const potionsElement = document.querySelector('.potions');
     const luckElement = document.querySelector('.luck');
     const defenceElement = document.querySelector('.defence');
-<<<<<<< HEAD
  
-=======
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
     if (nameElement) nameElement.textContent = hero.name;
     if (levelElement) levelElement.textContent = hero.level;
     if (stepsElement) stepsElement.textContent = hero.steps;
@@ -294,16 +277,11 @@ function displayHeroInfo(hero) {
     if (luckElement) luckElement.textContent = hero.luck;
     if (defenceElement) defenceElement.textContent = hero.defence;
 }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 document.addEventListener("showPotionButton", () => {
     console.log("The potion event was triggered and user needs to decide to take the potion")
     togglePotionVisibility("drinkPotionButton");
 })
-<<<<<<< HEAD
  
 document.getElementById("drinkPotionButton").addEventListener("click", () => {
     if (confirm("Are you sure you want to drink the potion (-1 Potion)?")) {
@@ -314,37 +292,6 @@ document.getElementById("drinkPotionButton").addEventListener("click", () => {
     }
 });
  
-=======
-
-drinkPotionButton.addEventListener('mouseover', () => {
-    drinkPotionButton.title = "Use a potion to recover 2 health points";
-    drinkPotionButton.style.backgroundColor = "yellow";
-});
-
-drinkPotionButton.addEventListener('mouseout', () => {
-    drinkPotionButton.title = "";
-    drinkPotionButton.style.backgroundColor = "";
-});
-takeStepButton.addEventListener("mouseover", () => {
-    takeStepButton.title = "Take a step forward in the game";
-    takeStepButton.style.backgroundColor = "#228e61";
-})
-
-takeStepButton.addEventListener("mouseout", () => {
-    takeStepButton.title = "";
-    takeStepButton.style.backgroundColor = ""
-    takeStepButton.style.color = "";
-})
-
-document.getElementById("drinkPotionButton").addEventListener("click", () => { 
-    if (confirm("Are you sure you want to drink the potion (-1 Potion)?")) { 
-        hero.usePotion();
-        displayHeroInfo(hero);
-        hideButton("drinkPotionButton");
-    }
-});
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 goToShopButton.addEventListener("click", () => {
     console.log("Go to shop button clicked")
     toggleVisibility("buySwordButton");
@@ -354,24 +301,14 @@ goToShopButton.addEventListener("click", () => {
     hideButton("goToShopButton");
     displayHeroInfo(hero);
 })
-<<<<<<< HEAD
-
-=======
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 buyPotionButton.addEventListener("click", () => {
     if (confirm("Are you sure you want to buy a potion (-3 Gold)?")) {
         hero.buyPotion();
         displayHeroInfo(hero);
-<<<<<<< HEAD
         updateInventoryDisplay(hero);
     }
 })
  
-=======
-    }
-})
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 leaveShopMenuButton.addEventListener("click", () => {
     console.log("Leave shop button clicked")
     toggleVisibility("buySwordButton");
@@ -380,11 +317,7 @@ leaveShopMenuButton.addEventListener("click", () => {
     toggleVisibility("leaveShopMenuButton");
     displayHeroInfo(hero);
 })
-<<<<<<< HEAD
  
-=======
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 buySwordButton.addEventListener("click", () => {
     if (hero.gold >= 2) {
         if (confirm("Are you sure you want to buy a sword (-2 Gold)?")) {
@@ -393,21 +326,14 @@ buySwordButton.addEventListener("click", () => {
             console.log("Sword bought!")
             updateGameBoard("Sword bought! Your luck has increased.");
             displayHeroInfo(hero);
-<<<<<<< HEAD
             updateInventoryDisplay(hero);
-=======
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
         }
     } else {
         console.log("Not enough gold!")
         updateGameBoard("Not enough gold to buy a sword!");
     }
 })
-<<<<<<< HEAD
  
-=======
-
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
 buyShieldButton.addEventListener("click", () => {
     if (hero.gold >= 2) {
         if (confirm("Are you sure you want to buy a shield (-2 Gold)?")) {
@@ -416,10 +342,7 @@ buyShieldButton.addEventListener("click", () => {
             console.log("Shield bought!")
             updateGameBoard("Shield bought! Your defence has increased.");
             displayHeroInfo(hero);
-<<<<<<< HEAD
             updateInventoryDisplay(hero);
-=======
->>>>>>> b14bd96d3a0b4d5b12649b0d2486e4b628edac58
         }
     } else {
         console.log("Not enough gold!")

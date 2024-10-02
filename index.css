@@ -40,13 +40,35 @@ button:hover {
 }
 
 #animation-container {
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     position: relative;
     border-radius: 10%; 
     overflow: hidden;
-    left: 60px;
-    background: rgba(99, 99, 99, 0.4),
+    left: 30px;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgba(99, 99, 99, 0.4);
+}
+
+#animation-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/cave.jpg');
+    background-repeat: repeat-x;
+    animation: scrollBackground 20s linear infinite;
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000% 0;
+    }
 }
 
 .character-image {  
@@ -57,7 +79,7 @@ button:hover {
 }
 
 .goblin-image {
-    height: 240px;
+    height: 340px;
     left: 500px;
     display: none;
     position: absolute;
@@ -150,4 +172,25 @@ button:hover {
 .item-quantity {
     font-weight: bold;
     margin-left: 10px;
+}
+
+.hint-box {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.hint-box.show {
+    opacity: 1;
 }
